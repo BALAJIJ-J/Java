@@ -1,0 +1,61 @@
+public class Exceptions{
+static void arithmetic(){
+    try{
+        int a=10, b=0;
+        int c=a/b;
+        System.out.println("Result = " + c);
+    }
+    catch(ArithmeticException a){
+        System.out.println("\nArithmetic Exception Catched - Can't divide a number by 0");
+    }
+}
+
+static void nullpointer(){
+    try {
+            String a = null; //null value
+            System.out.println(a.charAt(0));
+        } catch(NullPointerException e) {
+            System.out.println("\nNull Pointer Exception Catched");
+        }
+}
+
+static void stringindexoutofbound(){
+    try {
+            String a = "Hello "; // length is 5
+            char c = a.charAt(6); // accessing 7th element
+            System.out.println(c);
+        }
+        catch(StringIndexOutOfBoundsException e) {
+            System.out.println("\nString Index Out Of Bounds Exception Catched");
+        }
+}
+
+static void numberformat(){
+    try {
+            // "a" is not a number
+            int num = Integer.parseInt ("a") ;
+            System.out.println(num);
+        } catch(NumberFormatException e) {
+            System.out.println("\nNumber format exception Catched");
+        }
+}
+
+static void arrayindexoutofbound(){
+    try{
+            int a[] = new int[5];
+            a[6] = 5; // accessing 7th element in an array of size 5
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.out.println ("\nArray Index is Out Of Bounds Catched");
+        }
+}
+
+    public static void main(String args[]){
+       Exceptions.arithmetic();
+       Exceptions.nullpointer();
+       Exceptions.stringindexoutofbound();
+       Exceptions.numberformat();
+       Exceptions.arrayindexoutofbound();
+    }
+
+} 
